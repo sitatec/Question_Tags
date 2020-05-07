@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ressources/dictionaries/auxiliaries.txt</file>
+        <file>ressources/dictionaries/infinitive_verbs.txt</file>
+        <file>ressources/dictionaries/modal_verbs.txt</file>
+        <file>ressources/dictionaries/past_participe.txt</file>
+        <file>ressources/dictionaries/preterit_irregular.txt</file>
+        <file>ressources/dictionaries/quiz.txt</file>
+    </qresource>
+</RCC>
