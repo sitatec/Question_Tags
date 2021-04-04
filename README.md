@@ -1,7 +1,4 @@
-# NOT STABLE
-## need refactoring | code not tested | unoptimized | unmaintained
-This project was created to practice c++ programming and is not maintained.
-
+> # ⚠️This project was created to practice C ++ programming, it is neither tested nor maintained.
 # Question_Tags
 Multi-platform Question tags generator, the user enters a sentence the application generates his question tag, it also has a multiple generation Feature which consists in generating a list of question tags in a text file from another text file containing sentences supplied by the user.
 Compiled MacOS version can be found [here](https://sourceforge.net/projects/question-tags/).
