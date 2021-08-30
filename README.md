@@ -1,8 +1,9 @@
 [![Download Question_Tags](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/question-tags/files/latest/download)
-# Question_Tags
-A multi-platform (Windows, MacOS, Linux) Desktop application for generating question tags, the user enters a sentence, the application generates its question tag, it also has a multiple generation Feature which can generate a list of question tags in a text file from another text file containing sentences supplied by the user.<br>
 
 >⚠️ &nbsp;&nbsp;Currently, only the macOS version is available for download, but the source code can be compiled for Windows and Linux too.
+
+# Question_Tags
+A multi-platform (Windows, MacOS, Linux) Desktop application for generating question tags, the user enters a sentence, the application generates its question tag, it also has a multiple generation Feature which can generate a list of question tags in a text file from another text file containing sentences supplied by the user.<br>
 
 # Demo Video
 >Clicking on the image below will take you to the video on google drive.
