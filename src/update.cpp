@@ -20,7 +20,7 @@ static const char* RESTART_SUGGESTION_TEXT   = "Update done. You need restart th
 
 Update::Update( QWidget* parrent ): QWidget( parrent )
 {
-    _currentVersion = QVersionNumber( VERSION_MAJOR, VERSION_MINOR );
+    _currentVersion = QVersionNumber( VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH);
     _urlOfLatestVersionInfos = QUrl( URL_OF_UPDATE_INFOS );
 
     connect(this, SIGNAL( newVersionAvailable() ), this, SLOT( suggestUpdate() ));
