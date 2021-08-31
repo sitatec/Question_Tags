@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <vector>
 #include "include/error.hpp"
+#include <algorithm>
 
 #define ONE_CHAR 1
 #define TWO_CHARS 2

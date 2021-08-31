@@ -53,7 +53,11 @@ void Window::loadPalettes()
 void Window::loadWidgets()
 {
     _mainLayout =  new  QHBoxLayout;
-    _tab        =  new  QTabWidget;
+    _tab        =  new  QTabWidget();
+
+#ifdef WINDOWS
+    _tab->setStyleSheet("background-color:#f9f9f9");
+#endif
 
     loadLeftMenu();
     loadGeneratorWidgets();
@@ -68,8 +72,8 @@ void Window::loadWidgets()
     _mainLayout->addWidget(_leftMenu);
     _mainLayout->addWidget(_tab);
 
-    setPalette(_palette);
     setLayout(_mainLayout);
+    setPalette(_palette);
 
     autoUpdateCheck();
 }
@@ -146,7 +150,8 @@ void Window::loadGeneratorWidgets()
     _textInput->setPlaceholderText(tr("Saisiser une phrase ici"));
     _textInput->setStyleSheet("border-radius: 0px; \
                                padding: 2px; \
-                               font-size: 14px; ");
+                               font-size: 14px; \
+                               background-color: white");
 
     _arrowImg->setPixmap(QPixmap(":/ressources/images/arrow1.png"));
 
@@ -169,6 +174,9 @@ void Window::loadGeneratorWidgets()
     _generatorLayout->addSpacing( 130 );
 
     _generatorWidget->setLayout( _generatorLayout );
+    _generatorWidget->setStyleSheet("background-color: transparent;");
+    _generatorWidget->setAttribute( Qt::WA_NoSystemBackground, true );
+    _generatorWidget->setAttribute( Qt::WA_OpaquePaintEvent, false );
 
     connect( _generateButton, SIGNAL( clicked() ),this, SLOT( generate() ) );
 }
@@ -201,11 +209,17 @@ void Window::loadMultipleGeneratorWidgets()
 
 void Window::autoUpdateCheck()
 {
+#ifdef WINDOWS
+    QString appDirPath = qApp->applicationDirPath();
+    QFile file( appDirPath + "/auto_update_date.txt" );
+#elif UNIX_KERNEL
     std::string appPath = qApp->applicationDirPath().toStdString();
     auto dotPos = appPath.find_last_of(".");// find the dot position in "applicationName.app"
     QString filePath = appPath.erase( dotPos ).c_str();
 
     QFile file( filePath + ".app/Contents/Resources/auto_update_date.txt" );
+#endif
+
     if( file.open( QIODevice::ReadWrite | QIODevice::Text ) ){
         auto autoUpdateDateStr = file.readAll();
         QDate nextAutoUpdateCheck = QDate::currentDate().addDays( 14 );

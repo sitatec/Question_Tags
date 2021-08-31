@@ -17,7 +17,7 @@ private:
     std::string  _verb;
     std::string  _questionTag;
     std::string  _warnings;
-    std::string  _explanation;
+    std::string  _explanation = "";
     std::vector  <std::string> _splittedContent;
   
     std::string  findVerb();

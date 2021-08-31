@@ -1,6 +1,7 @@
 #pragma once
 
-#define UNIX_KERNEL
+//#define UNIX_KERNEL
+#define WINDOWS
 
 #include <QtWidgets>
 #include <QKeyEvent>
